@@ -1,0 +1,5 @@
+local Vampire = {
+
+}
+
+return Vampire
