@@ -8,6 +8,10 @@ CollectionService:GetInstanceAddedSignal("kModel"):Connect(function(instance)
 	print("NovoBlocoAdicionado")
 end)
 
+CollectionService:GetInstanceRemovedSignal("kModel"):Connect(function(instance)
+	print("BlocoRemovido")
+end)
+
 for _, model in CollectionService:GetTagged("kModel") do
 	print("CodeWorking!!")
 	if model.kPart then
