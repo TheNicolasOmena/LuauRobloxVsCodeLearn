@@ -17,4 +17,4 @@ function onQuestCompleted(player: Player)
 	end
 end
 
-RS.Remotes.GetCoins.OnServerEvent:Connect(onQuestCompleted)
+return onQuestCompleted

@@ -4,11 +4,11 @@
 
 local CollectionService = game:GetService("CollectionService")
 
-CollectionService:GetInstanceAddedSignal("kModel"):Connect(function(instance)
+CollectionService:GetInstanceAddedSignal("kModel"):Connect(function()
 	print("NovoBlocoAdicionado")
 end)
 
-CollectionService:GetInstanceRemovedSignal("kModel"):Connect(function(instance)
+CollectionService:GetInstanceRemovedSignal("kModel"):Connect(function()
 	print("BlocoRemovido")
 end)
 
