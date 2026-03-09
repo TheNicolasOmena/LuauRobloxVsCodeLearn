@@ -5,7 +5,7 @@ local tagName = "kPart"
 local function changePartCollor(): ()
     local Parts = CollectionService:GetTagged(tagName)
     print(Parts)
-	Parts.BrickColor = BrickColor.new("Bright red")
+	Parts.Color3 = Color3.new(1, 0, 0)
     --local hum = game.Players.LocalPlayer.Character.Humanoid
   	--local Part.BrickColor = BrickColor.new("Bright Blue")
     --local Parts2 = game.Workspace.Udemy.SimTek.GitKillParts:GetChildren()

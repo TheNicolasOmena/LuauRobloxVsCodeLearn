@@ -1,13 +1,13 @@
 local Tags = game:GetService("CollectionService")
-local SSS = game:GetService("ServerScriptService")
-local zSpawner = SSS:WaitForChild("Zombies")
+local RS = game:GetService("ReplicatedStorage")
+local Zombies = RS.Replicated.ReplicatedStorage.Clones.Zombies4:Clone()
 local Bareel = {}
 
 
 local function WaveSpawn(bareel)
     print("WaveSpawn function called")
     prompt = bareel.ActionPrompt
-    alarm = SSS.replicated.ReplicatedStorage.Audios.BuildingAudios.Alarm:Clone()
+    alarm = RS.Replicated.ReplicatedStorage.Audios.BuildingAudios.Alarm:Clone()
     alarm.Parent = bareel
     alarm:Play()
     task.wait(1)
@@ -15,11 +15,20 @@ local function WaveSpawn(bareel)
     bareel.CanCollide = false
 end
 
+local function BareelSetup(bareel)
+    print("BareelSetup function called")
+    local Zombies = Zombies:Clone()
+    Zombies.Parent = game.Workspace
+    bareel.Transparency = 1
+    bareel.CanCollide = false
+end
+
 
 for _, bareel in Tags:GetTagged("bareel") do
-        bareel.Transparency = 0
-        bareel.CanCollide = true
-        bareel.ActionPrompt.Triggered:Connect(function()WaveSpawn(bareel)
+        bareel.ActionPrompt.Triggered:Connect(
+            function()
+            BareelSetup(bareel)
+            WaveSpawn(bareel)
     end)
 end
 
