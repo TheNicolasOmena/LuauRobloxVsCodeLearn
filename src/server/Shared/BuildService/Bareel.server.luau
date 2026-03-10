@@ -1,13 +1,13 @@
 local Tags = game:GetService("CollectionService")
 local RS = game:GetService("ReplicatedStorage")
 local Zombies = RS.Replicated.ReplicatedStorage.Clones.Zombies4:Clone()
-local Bareel = {}
+--local Bareel = {}
 
 
 local function WaveSpawn(bareel)
     print("WaveSpawn function called")
-    prompt = bareel.ActionPrompt
-    alarm = RS.Replicated.ReplicatedStorage.Audios.BuildingAudios.Alarm:Clone()
+    --prompt = bareel.ActionPrompt
+    local alarm = RS.Replicated.ReplicatedStorage.Audios.BuildingAudios.Alarm:Clone()
     alarm.Parent = bareel
     alarm:Play()
     task.wait(1)
@@ -17,8 +17,8 @@ end
 
 local function BareelSetup(bareel)
     print("BareelSetup function called")
-    local Zombies = Zombies:Clone()
-    Zombies.Parent = game.Workspace
+    local ZombiesClone = Zombies:Clone()
+    ZombiesClone.Parent = game.Workspace
     bareel.Transparency = 1
     bareel.CanCollide = false
 end
