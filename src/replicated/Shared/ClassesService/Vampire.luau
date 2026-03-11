@@ -1,5 +1,0 @@
-local Vampire = {
-
-}
-
-return Vampire

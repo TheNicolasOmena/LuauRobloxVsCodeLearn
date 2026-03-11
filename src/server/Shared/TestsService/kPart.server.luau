@@ -1,4 +1,4 @@
-local CollectionService = game:GetService("CollectionService")
+--[[local CollectionService = game:GetService("CollectionService")
 
 for part in CollectionService:GetTagged("kPart") do
 	part.Touched:Connect(function(hit)
@@ -7,4 +7,4 @@ for part in CollectionService:GetTagged("kPart") do
 			hit.Parent.Humanoid.Health = 0
 		end
 	end)
-end
+end]]
